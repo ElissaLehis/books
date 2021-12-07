@@ -1,40 +1,27 @@
 const titleInput = document.querySelector('#titleInput')
-const authorInput = document.querySelector('authorInput')
-const isbnInput = document.querySelector('isbnInput')
+const authorInput = document.querySelector('#authorInput')
+const isbnInput = document.querySelector('#isbnInput')
 const form = document.querySelector('form')
 
 form.addEventListener('submit', addBook)
 
-function addBook(event){
+function addBook(event) {
     const title = titleInput.value
+    const author = authorInput.value
+    const isbn = isbnInput.value
 
     const tr = document.createElement('tr')
-    tr.className ="andmed"
-    const text = document.createTextNode(title)
-    tr.appendChild(text)
+    tr.className = "andmed"
+    const text1 = document.createTextNode(title)
+    const text2 = document.createTextNode(author)
+    const text3 = document.createTextNode(isbn)
+    tr.appendChild(text1)
+    tr.appendChild(text2)
+    tr.appendChild(text3)
     console.log(tr)
 
     event.preventDefault()
 }
-/*function addBook(event){
-    const author = authorInput.value
-    const tr = document.createElement('tr)
-    tr.className = 'andmed'
-    const text = document.createTextNode(author)
-    tr.appendChild(text)
-
-    event.preventDefault()
-
-}
-function addBook(event){
-    const isbn = isbnInput.value
-    const tr = document.createElement('tr')
-    tr.className = 'andmed'
-    const text = document.createTextNode(isbn)
-    tr.appendChild(text)
-
-    event.preventDefault()
-}*/
 
 
 
