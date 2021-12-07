@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Books projekt</title>
+</head>
+<body>
+<!--Vormi osa-->
+<div class="container-fluid">
+    <div class="container mt-5">
+        <div class="row">
+            <h4>Add Book</h4>
+                <form class="col-5">
+                        <div class="mb-4">
+                            <label for="titleInput" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="titleInput" placeholder="">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="authorInput" class="form-label">Author</label>
+                            <input type="text" class="form-control" id="authorInput" placeholder="">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="isbnInput" class="form-label">ISBN#</label>
+                            <input type="text" class="form-control" id="isbnInput" placeholder="">
+                            <a href="#" class="btn btn-outline-primary" id="submit">Submit</a>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!--Tabeli osa-->
+<div class="container mt-5">
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">ISBN#</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Tõde ja õigus</td>
+                <td>Naksitrallid</td>
+                <td>123789</td>
+            </tr>
+            <tr>
+                <td>A.H Tammsaare</td>
+                <td>Eino Raud</td>
+                <td>123788</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
