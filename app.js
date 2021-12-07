@@ -18,7 +18,7 @@ function addBook(event) {
     tr.appendChild(text1)
     tr.appendChild(text2)
     tr.appendChild(text3)
-    console.log(tr)
+
 
     event.preventDefault()
 }
