@@ -17,18 +17,18 @@
             <h4>Add Book</h4>
                 <form class="col-5">
                         <div class="mb-4">
-                            <label for="titleInput" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="titleInput">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title">
                         </div>
 
                         <div class="mb-4">
-                            <label for="authorInput" class="form-label">Author</label>
-                            <input type="text" class="form-control" id="authorInput">
+                            <label for="author" class="form-label">Author</label>
+                            <input type="text" class="form-control" id="author">
                         </div>
 
                         <div class="mb-4">
-                            <label for="isbnInput" class="form-label">ISBN#</label>
-                            <input type="text" class="form-control" id="isbnInput">
+                            <label for="isbn" class="form-label">ISBN#</label>
+                            <input type="text" class="form-control" id="isbn">
                             <input class= "btn btn-outline-primary col-7 m-5" type="submit" value="Submit">
                         </div>
                 </form>
@@ -42,23 +42,14 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Author</th>
-                <th scope="col">ISBN#</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN#</th>
             </tr>
             </thead>
-            <tbody>
-            <tr class="andmed">
-                <td>Tõde ja õigus</td>
-                <td>Naksitrallid</td>
-                <td>123789</td>
-            </tr>
-            <tr>
-                <td>A.H Tammsaare</td>
-                <td>Eino Raud</td>
-                <td>123788</td>
-            </tr>
+            <tbody id="books-list">
             </tbody>
+
         </table>
     </div>
 </div>
