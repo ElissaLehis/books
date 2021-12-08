@@ -1,11 +1,14 @@
 //user input form
 const form = document.querySelector('form')
 form.addEventListener('submit', addBook)
+const taskList = document.querySelector('.table')
+taskList.addEventListener('click',deleteBook)
 
 //get form submit value from form input
 const titleInput = document.querySelector('#title')
 const authorInput = document.querySelector('#author')
 const isbnInput = document.querySelector('#isbn')
+
 
 //add book function
 function addBook(event) {
@@ -32,5 +35,13 @@ function addBook(event) {
     event.preventDefault()
 }
 
+function deleteBook(event){
+    if(event.target.textContent == 'X'){
+        if(confirm("Do you want to delete this task?")){
+            console.log(event.target.closest('tr').remove());
+        }
+    }
+
+}
 
 
