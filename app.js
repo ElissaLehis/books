@@ -42,8 +42,25 @@ function deleteBook(event){
     if(event.target.textContent == 'X'){
         if(confirm("Do you want to delete this task?")){
             console.log(event.target.closest('tr').remove());
+            book = event.target.closest('tr').remove();
+
+            deleteBookFromLocalStorage(book);
         }
     }
+}
+function deleteBookFromLocalStorage(book){
+    let books;
+    if (localStorage.getItem('books') === null){
+        books = [];
+    } else {
+        books = JSON.parse(localStorage.getItem('books'));
+    }
+    books.forEach(function (bookElement,index){
+        if(bookElement.book === book){
+            books.splice(index,1);
+        }
+    });
+    localStorage.setItem('books', JSON.stringify(books));
 }
 
 //add book to LS function
