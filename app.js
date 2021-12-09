@@ -3,12 +3,35 @@ const form = document.querySelector('form');
 form.addEventListener('submit', addBook);
 const taskList = document.querySelector('.table');
 taskList.addEventListener('click',deleteBook);
+document.addEventListener('DOMContentLoaded', getBooksFromLocalStorage);
 
 //get form submit value from form input
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
 const isbnInput = document.querySelector('#isbn');
 
+
+
+function getBooksFromLocalStorage(){
+    let books;
+
+    if (localStorage.getItem('books') === null){
+        books = [];
+    } else {
+        books = JSON.parse(localStorage.getItem('books'));
+    }
+    books.forEach(function (book){
+        const tr = document.createElement('tr');
+        const trContent = `<td>${book[0]}</td>
+                       <td>${book[1]}</td>
+                       <td>${book[2]}</td>
+                       <td><a href="#">X</a></td>
+                    `
+        tr.innerHTML = trContent
+        bookList = document.querySelector('#books-list');
+        bookList.appendChild(tr);
+    });
+}
 
 //add book function
 function addBook(event) {
