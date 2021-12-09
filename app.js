@@ -1,13 +1,13 @@
 //user input form
-const form = document.querySelector('form')
-form.addEventListener('submit', addBook)
-const taskList = document.querySelector('.table')
-taskList.addEventListener('click',deleteBook)
+const form = document.querySelector('form');
+form.addEventListener('submit', addBook);
+const taskList = document.querySelector('.table');
+taskList.addEventListener('click',deleteBook);
 
 //get form submit value from form input
-const titleInput = document.querySelector('#title')
-const authorInput = document.querySelector('#author')
-const isbnInput = document.querySelector('#isbn')
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const isbnInput = document.querySelector('#isbn');
 
 
 //add book function
@@ -18,21 +18,24 @@ function addBook(event) {
 
 
 //create tr DOM element
-    const tr = document.createElement('tr')
+    const tr = document.createElement('tr');
     const trContent = `<td>${title}</td>
-                      <td>${author}</td>
-                      <td>${isbn}</td>
-                      <td><a href="#">X</a></td>
+                       <td>${author}</td>
+                       <td>${isbn}</td>
+                       <td><a href="#">X</a></td>
                       `
     tr.innerHTML = trContent
-    bookList = document.querySelector('#books-list')
-    bookList.appendChild(tr)
+    bookList = document.querySelector('#books-list');
+    bookList.appendChild(tr);
 
 //clear form input value
     document.querySelector('#title').value = ''
     document.querySelector('#author').value = ''
     document.querySelector('#isbn').value = ''
-    event.preventDefault()
+
+//add book
+    addBookToLocalStorage(title,author,isbn);
+    event.preventDefault();
 }
 
 function deleteBook(event){
@@ -41,7 +44,21 @@ function deleteBook(event){
             console.log(event.target.closest('tr').remove());
         }
     }
-
 }
+
+//add book to LS function
+function addBookToLocalStorage(title,author,isbn){
+    let books;
+    if (localStorage.getItem('books') === null){
+        books = [];
+    } else {
+        books = JSON.parse(localStorage.getItem('books'));
+    }
+
+    books.push([title,author,isbn])
+    localStorage.setItem('books', JSON.stringify(books));
+    console.log(books)
+}
+
 
 
